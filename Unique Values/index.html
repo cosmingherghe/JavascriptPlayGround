@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Map</title>
+</head>
+
+<body>
+
+  <div id="result"></div>
+
+  <script>
+    // Unique Values
+    const menu = [
+      {
+        name: 'pancakes',
+        category: 'breakfast',
+      },
+      {
+        name: 'burger',
+        category: 'lunch',
+      },
+      {
+        name: 'steak',
+        category: 'dinner',
+      },
+      {
+        name: 'bacon',
+        category: 'breakfast',
+      },
+      {
+        name: 'eggs',
+        category: 'breakfast',
+      },
+      {
+        name: 'pasta',
+        category: 'dinner',
+      },
+    ];
+    //  Quokka.js - Extention
+    //  returns a new array
+    //  does not change the size of original array (unlike filter)
+    //  uses values from original array when making new one
+    const ages = people.map((person) => {
+      return person.age;
+    });
+    console.log(ages);
+
+    const peopleWithUpperCaseNames = people.map((person) => {
+      return {
+        name: person.name.toUpperCase(),
+        age: person.age,
+        position: person.position
+      }
+    });
+
+    console.log(peopleWithUpperCaseNames);
+
+    const names = people.map((person) => `<h2>${person.name}</h2>`);
+    const result = document.querySelector('#result');
+    result.innerHTML = names.join('');
+  </script>
+</body>
+
+</html>
